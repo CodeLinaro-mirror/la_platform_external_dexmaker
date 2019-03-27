@@ -30,10 +30,11 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.provider.Settings;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import androidx.test.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -116,8 +117,6 @@ public class BlacklistedApis {
         parent.measure(100, 100);
     }
 
-    // TODO(b/122905906): Enable this test.
-    @Ignore
     @SuppressLint({"PrivateApi", "CheckReturnValue"})
     @Test
     public void cannotCallBlackListedAfterSpying() {
@@ -147,8 +146,6 @@ public class BlacklistedApis {
         }
     }
 
-    // TODO(b/122905906): Enable this test.
-    @Ignore
     @Test
     public void spiesCannotBeUsedToCallHiddenMethods() {
         CallBlackListedMethod t = spy(new CallBlackListedMethod());
@@ -170,8 +167,6 @@ public class BlacklistedApis {
         public abstract void unused();
     }
 
-    // TODO(b/122905906): Enable this test.
-    @Ignore
     @Test
     public void mocksOfAbstractClassesCannotBeUsedToCallHiddenMethods() {
         CallBlacklistedMethodAbstract t = mock(CallBlacklistedMethodAbstract.class);
